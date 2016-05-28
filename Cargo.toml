@@ -1,0 +1,9 @@
+[package]
+authors = ["Marcel Müller <neikos@neikos.email>"]
+name = "shoppe"
+version = "0.1.0"
+
+[dependencies]
+iron = "0.3.0"
+router = "0.1.1"
+time = "0.1.35"
