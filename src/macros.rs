@@ -2,7 +2,7 @@
 
 #[macro_export]
 macro_rules! resource {
-    ($router:ident, $path:expr, $name:ident) => {
+    ($router:ident, $path:expr, $name:ident) => {{
         // if you prepend all these lines with `let _ = ` it magically works?
         $router.get(format!("/{}",          &$path), $name::index);
         $router.get(format!("/{}/new",      &$path), $name::new);
@@ -11,6 +11,6 @@ macro_rules! resource {
         $router.get(format!("/{}/:id/edit", &$path), $name::edit);
         $router.put(format!("/{}/:id",      &$path), $name::update);
         $router.delete(format!("/{}/:id",   &$path), $name::delete);
-    }
+    }}
 }
 
