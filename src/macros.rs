@@ -3,6 +3,7 @@
 #[macro_export]
 macro_rules! resource {
     ($router:ident, $path:expr, $name:ident) => {
+        // if you prepend all these lines with `let _ = ` it magically works?
         $router.get(format!("/{}",          &$path), $name::index);
         $router.get(format!("/{}/new",      &$path), $name::new);
         $router.post(format!("/{}",         &$path), $name::create);
